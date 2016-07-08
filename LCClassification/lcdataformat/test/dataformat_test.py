@@ -4,12 +4,12 @@ import lcdataformat.dataformats as dfmt
 
 
 def test_rate_format():
-    assert dfmt.format_interest_rate('15.5%') == 15.5
+    assert dfmt.parse_float_with_percent('15.5%') == 15.5
 
 
 def test_rate_format_exception():
     with pytest.raises(ValueError):
-        dfmt.format_interest_rate(None)
+        dfmt.parse_float_with_percent(None)
 
 
 def test_member_id_truncate():
