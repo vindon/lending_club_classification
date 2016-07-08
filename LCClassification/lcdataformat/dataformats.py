@@ -3,7 +3,8 @@ import numpy as np
 import datetime
 import re
 import logging
-
+from time import time
+from functools import wraps
 
 def convert_to_float(val):
     return float(val)
@@ -63,3 +64,16 @@ def ret_string_len_if_str_zero_ifnot(x):
         return len(x)
     else:
         return 0
+
+
+
+
+def timed(f):
+    @wraps(f)
+    def wrapper(*args,**kwargs):
+        start = time()
+        result =  f(*args,**kwargs)
+        elapsed = time()-start
+        logging.info("Time Taken for executing %s is %d sec "% (f.__name__,elapsed))
+        return result
+    return wrapper

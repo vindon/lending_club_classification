@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb19588a-0e70-4d6f-ba53-3795e129e551" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lcdataformat/logging_config.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/LCClassification.iml" afterPath="$PROJECT_DIR$/.idea/LCClassification.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lcdataformat/LCClassifier.py" afterPath="$PROJECT_DIR$/lcdataformat/LCClassifier.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lcdataformat/LCDataExtractedFeatures.py" afterPath="$PROJECT_DIR$/lcdataformat/LCDataExtractedFeatures.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lcdataformat/dataformats.py" afterPath="$PROJECT_DIR$/lcdataformat/dataformats.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lcdataformat/test/dataformat_test.py" afterPath="$PROJECT_DIR$/lcdataformat/test/dataformat_test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LoanDefaultPrediction.ipynb" afterPath="$PROJECT_DIR$/../LoanDefaultPrediction.ipynb" />
     </list>
     <ignored path="LCClassification.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +23,7 @@
     <SUITE FILE_PATH="coverage/LCClassification$dataformats.coverage" NAME="dataformats Coverage Results" MODIFIED="1467857826969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lcdataformat" />
     <SUITE FILE_PATH="coverage/LCClassification$test_formats.coverage" NAME="test_formats Coverage Results" MODIFIED="1467861335096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/LCClassification$Nosetest_FormattingTests_test_rate_format.coverage" NAME="Nosetest FormattingTests.test_rate_format Coverage Results" MODIFIED="1467855886161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lcdataformat" />
-    <SUITE FILE_PATH="coverage/LCClassification$LCClassifier.coverage" NAME="LCClassifier Coverage Results" MODIFIED="1467957711080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lcdataformat" />
+    <SUITE FILE_PATH="coverage/LCClassification$LCClassifier.coverage" NAME="LCClassifier Coverage Results" MODIFIED="1467981105785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lcdataformat" />
     <SUITE FILE_PATH="coverage/LCClassification$LCDataExtractedFeatures.coverage" NAME="LCDataExtractedFeatures Coverage Results" MODIFIED="1467954943495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lcdataformat" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -40,11 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dataformats.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dataformats.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lcdataformat/dataformats.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="1025">
+              <caret line="76" column="59" selection-start-line="76" selection-start-column="59" selection-end-line="76" selection-end-column="59" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -55,20 +50,18 @@
       <file leaf-file-name="LCClassifier.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lcdataformat/LCClassifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="105">
+              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LCDataExtractedFeatures.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LCDataExtractedFeatures.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lcdataformat/LCDataExtractedFeatures.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-623">
-              <caret line="20" column="65" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
+            <state relative-caret-position="-150">
+              <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -117,9 +110,9 @@
         <option value="$PROJECT_DIR$/lcdataformat/dataformat_test.py" />
         <option value="$PROJECT_DIR$/lcdataformat/test/dataformat_test.py" />
         <option value="$PROJECT_DIR$/lcdataformat/logging_config.ini" />
-        <option value="$PROJECT_DIR$/lcdataformat/dataformats.py" />
         <option value="$PROJECT_DIR$/lcdataformat/LCClassifier.py" />
         <option value="$PROJECT_DIR$/lcdataformat/LCDataExtractedFeatures.py" />
+        <option value="$PROJECT_DIR$/lcdataformat/dataformats.py" />
       </list>
     </option>
   </component>
@@ -563,7 +556,14 @@
       <option name="project" value="LOCAL" />
       <updated>1467865816574</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Completed feature parsing. More feature extraction code needs to be added.">
+      <created>1467957783644</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1467957783644</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -608,8 +608,8 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3293617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45106384" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4509804" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -647,22 +647,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Code for LC Classification" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code for LC Classification" />
+    <MESSAGE value="Completed feature parsing. More feature extraction code needs to be added." />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed feature parsing. More feature extraction code needs to be added." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/lcdataformat/dataformats.py</url>
-          <line>36</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/lcdataformat/dataformats.py</url>
-          <line>37</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager>
@@ -686,9 +675,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -738,30 +725,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lcdataformat/dataformats.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lcdataformat/LCClassifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lcdataformat/LCDataExtractedFeatures.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-623">
-          <caret line="20" column="65" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
+        <state relative-caret-position="-150">
+          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lcdataformat/dataformats.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1025">
+          <caret line="76" column="59" selection-start-line="76" selection-start-column="59" selection-end-line="76" selection-end-column="59" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
