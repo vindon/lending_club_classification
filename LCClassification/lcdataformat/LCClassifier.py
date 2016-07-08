@@ -9,7 +9,7 @@ import sklearn.metrics
 import sklearn.svm
 import sklearn.svm.libsvm
 
-from LCDataExtractedFeatures import LcDataExtractor
+from lcdataextractor import LcDataExtractor
 
 
 class TrueValuedClassifier:
@@ -26,9 +26,8 @@ def run(file_name):
     fileConfig('logging_config.ini')
     logger = logging.getLogger()
     logger.debug("Testing Logging")
-    csv_df = pd.read_csv(file_name, skiprows=1, skipfooter=2, engine='python')
     dataExtractor = LcDataExtractor()
-    df = dataExtractor.create(csv_df)
+    df = dataExtractor.create(file_name)
     print(df.head())
 
 

@@ -1,7 +1,8 @@
 import pandas as pd
-import dataformats as dfmt
+import util as dfmt
 import logging
 import timeit
+from dateutil import relativedelta
 
 
 class LcDataExtractor:
@@ -11,8 +12,9 @@ class LcDataExtractor:
     """
 
     @dfmt.timed
-    def create(self, df):
-        self.potential_features = ['annual_inc', 'application_type', 'delinq_2yrs', 'delinq_amnt',
+    @dfmt.memoize
+    def create(self, file_name):
+        self.potential_features = ['member_id', 'annual_inc', 'application_type', 'delinq_2yrs', 'delinq_amnt',
                                    'desc', 'dti', 'earliest_cr_line', 'emp_length', 'grade', 'home_ownership',
                                    'inq_last_6mths', 'installment',
                                    'issue_d', 'int_rate', 'last_credit_pull_d', 'loan_amnt', 'loan_status',
@@ -39,13 +41,18 @@ class LcDataExtractor:
                        'total_acc': self.parse_total_acc,
                        'pub_rec_bankruptcies': self.parse_pub_rec_bankruptcies}
 
+        csv_df = pd.read_csv(file_name, skiprows=1, skipfooter=2, engine='python')
+        df = csv_df[self.potential_features]
+
         for c in self.potential_features:
             f = lambda: self.identity(df)
             if c in normalizers:
                 f = normalizers[c](df)
             else:
                 f()
-        return df[self.potential_features]
+
+        self.create_new_features(df)
+        return df
 
     def identity(self, df):
         return df
@@ -79,18 +86,14 @@ class LcDataExtractor:
         """
         df.dti = df.dti.astype(float).fillna(df.dti.mean())
 
-    def convert_to_period(self, x):
-        if x is not None:
-            return pd.Period(x, 'M')
-
     @dfmt.timed
     def parse_earliest_cr_line(self, df):
         # logging.debug(df.earliest_cr_line.item())
-        df.earliest_cr_line = df.earliest_cr_line.map(lambda x: self.convert_to_period(x))
+        df.earliest_cr_line = df.earliest_cr_line.map(lambda x: dfmt.convert_to_date(x))
 
     @dfmt.timed
     def parse_last_credit_pull_d(self, df):
-        df.last_credit_pull_d = df.last_credit_pull_d.map(lambda x: self.convert_to_period(x))
+        df.last_credit_pull_d = df.last_credit_pull_d.map(lambda x: dfmt.convert_to_date(x))
 
     @dfmt.timed
     def parse_emp_length(self, df):
@@ -106,7 +109,7 @@ class LcDataExtractor:
 
     @dfmt.timed
     def parse_issue_d(self, df):
-        df.issue_d = df.issue_d.map(lambda x: self.convert_to_period(x)).fillna(df.issue_d.mean())
+        df.issue_d = df.issue_d.map(lambda x: dfmt.convert_to_date(x)).fillna(df.issue_d.mean())
 
     @dfmt.timed
     def parse_loan_status(self, df):
@@ -115,7 +118,6 @@ class LcDataExtractor:
                           'Does not meet the credit policy. Status:Fully Paid': 1,
                           'Does not meet the credit policy. Status:Charged Off': 0, 'Late (16-30 days)': 0}
         df['Target'] = df.loan_status.map(default_status)
-        # df.drop('loan_status', axis=1, inplace=True)
 
     @dfmt.timed
     def parse_mths_since_last_delinq(self, df):
@@ -153,3 +155,11 @@ class LcDataExtractor:
     @dfmt.timed
     def parse_pub_rec_bankruptcies(self, df):
         df.pub_rec_bankruptcies = df.pub_rec_bankruptcies.fillna(0.0).astype(int)
+
+    @dfmt.timed
+    def create_new_features(self, df):
+        ##Drop the loan status , use the target variable ...as the target.
+        df.drop('loan_status', axis=1, inplace=True)
+        df['credit_length'] = df.apply(lambda row: dfmt.find_length_diff_in_months(row['issue_d'],row['earliest_cr_line']),axis=1)
+
+

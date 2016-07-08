@@ -1,16 +1,12 @@
+from datetime import datetime, date
+
 import pytest
 
-import lcdataformat.dataformats as dfmt
+import util as dfmt
 
 
 def test_rate_format():
     assert dfmt.parse_float_with_percent('15.5%') == 15.5
-
-
-def test_rate_format_exception():
-    with pytest.raises(ValueError):
-        dfmt.parse_float_with_percent(None)
-
 
 def test_member_id_truncate():
     assert dfmt.trunc_member_id_to_int(70681.0) == 70681
@@ -31,3 +27,10 @@ def test_emp_legnth_format_non0():
 
 def test_emp_legnth_format_non1():
     assert dfmt.convert_less_than_yr_to_zero_or_num_otherwise('10+ years') == 10
+
+
+def test_find_length_diff_in_months():
+    dt1= date(2015, 12, 1)
+    today = date.today()
+    assert dfmt.find_length_diff_in_months(dt1=dt1,dt2=today) == 7
+
