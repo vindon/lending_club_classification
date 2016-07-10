@@ -20,6 +20,7 @@ class LcDataExtractor:
                                    'issue_d', 'int_rate', 'last_credit_pull_d', 'loan_amnt', 'loan_status',
                                    'mths_since_last_delinq', 'open_acc', 'pub_rec', 'revol_bal', 'revol_util',
                                    'sub_grade', 'total_acc', 'verification_status', 'pub_rec_bankruptcies']
+        self.__filename__ = file_name
 
         normalizers = {'annual_inc': self.parse_annual_inc,
                        'annual_inc_joint': self.parse_annual_inc,
@@ -109,7 +110,7 @@ class LcDataExtractor:
 
     @dfmt.timed
     def parse_issue_d(self, df):
-        df.issue_d = df.issue_d.map(lambda x: dfmt.convert_to_date(x)).fillna(df.issue_d.mean())
+        df.issue_d = df.issue_d.map(lambda x: dfmt.convert_to_date(x))
 
     @dfmt.timed
     def parse_loan_status(self, df):

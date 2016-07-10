@@ -86,11 +86,8 @@ def convert_to_date(x):
 
 
 def find_length_diff_in_months(dt2, dt1):
-    logging.debug(dt2)
-    logging.debug(dt2)
-    logging(type(dt1))
-    logging(type(dt2))
-    if pd.isnull(dt1) == False and pd.isnull(dt2) == False:
+    if isinstance(dt1, pd.Timestamp) and pd.isnull(dt1) == False and isinstance(dt2, pd.Timestamp) and pd.isnull(
+            dt2) == False:
         return relativedelta.relativedelta(dt2, dt1).months
 
 
@@ -115,7 +112,10 @@ def memoize(f):
         if len(kwargs) > 0:
             compressed += '_' + '_'.join([(str(k) + str(v))[:10] for k, v in kwargs])
 
-        filename = '%s%s.pickle' % (f.__name__, compressed)
+        logging.debug("Input File Name  " +args[1])
+        filename = '%s.pickle' % (args[1])
+
+        logging.debug("Pickling file name %s "% filename)
 
         if os.path.exists(filename):
             pickled = open(filename, 'rb')
@@ -126,6 +126,7 @@ def memoize(f):
             pickled = open(filename, 'wb')
             pickle.dump(result, pickled)
             pickled.close()
+        return result
 
     new_f.__name__ = f.__name__
     new_f.__doc__ = f.__doc__
