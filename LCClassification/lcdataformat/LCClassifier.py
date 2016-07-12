@@ -10,6 +10,7 @@ import sklearn.svm
 import sklearn.svm.libsvm
 
 from lcdataextractor import LcDataExtractor
+from lcfeatureselection import FeatureSelection
 
 
 class TrueValuedClassifier:
@@ -26,9 +27,14 @@ def run(file_name):
     fileConfig('logging_config.ini')
     logger = logging.getLogger()
     logger.debug("Testing Logging")
+
     dataExtractor = LcDataExtractor()
     df = dataExtractor.create(file_name)
-    print(df.head())
+
+    featureExtractor = FeatureSelection()
+    var_df,removed_features = featureExtractor.variance_threshold(dframe=df, autoremove=False, skip_columns=['member_id', 'Target'])
+    for remfeat in removed_features:
+        logging.info("Remove feature %s for low variance ",remfeat)
 
 
 if __name__ == '__main__':
